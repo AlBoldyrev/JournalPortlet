@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<hint-collection name="TEXTAREA">
+		<hint name="max-length">10000</hint>
+	</hint-collection>
+	<model name="com.softwerke.srv.model.Article">
+		<field name="uuid" type="String" />
+		<field name="articleId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="articleName" type="String" />
+		<field name="articleContent" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="articleRefuseComment" type="String" />
+		<field name="articleStatus" type="int" />
+		<field name="isArticlePublished" type="boolean" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="com.softwerke.srv.model.Review">
+		<field name="uuid" type="String" />
+		<field name="reviewId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="reviewName" type="String" />
+		<field name="reviewContent" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="articleId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+</model-hints>

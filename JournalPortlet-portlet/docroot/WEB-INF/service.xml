@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.softwerke.srv">
+	<author>Sasha</author>
+	<namespace>new_perfect_journal</namespace>
+	<entity name="Article" local-service="true" uuid="true">
+	
+		<column name="articleId" type="long" primary="true"></column>
+		<column name="groupId" type="long"></column>
+		<column name="articleName" type="String"></column>
+		<column name="articleContent" type="String"></column>
+		<column name="articleRefuseComment" type="String"></column>
+		<column name="articleStatus" type="int"></column>
+        <column name="isArticlePublished" type="boolean"></column>
+        <column name="userId" type="long"></column>
+		
+		<finder return-type="Collection" name="ArticleStatus">
+        	<finder-column name="articleStatus"></finder-column>
+ 	    </finder>
+        <finder name="IsArticlePublished" return-type="Collection">
+            <finder-column name="isArticlePublished"></finder-column>
+        </finder>
+        <finder name="ArticleUserId" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+ 	    
+	</entity>
+
+	<entity name="Review" local-service="true" uuid="true">
+		<column name="reviewId" type="long" primary="true"></column>
+		<column name="groupId" type="long"></column>
+		<column name="reviewName" type="String"></column>
+		<column name="reviewContent" type="String"></column>
+		<column name="articleId" type="long"></column>
+        <column name="userId" type="long"></column>
+		
+		<finder return-type="Collection" name="ArticleId">
+			<finder-column name="articleId"></finder-column>
+ 	    </finder>
+ 	    
+	</entity>
+	
+</service-builder>
